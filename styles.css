@@ -1,6 +1,11 @@
 .hidden { display: none; }
 .active { display: block; }
 
+body {
+  background-color: #FF0000;
+  color: #ff0000;
+}
+
 #navbar {
   background: #f0f0f0;
   padding: 1rem;
@@ -19,6 +24,4 @@
   margin: 0 auto;
 }
 
-body {
-  background-color: #FF0000;
-}
+
