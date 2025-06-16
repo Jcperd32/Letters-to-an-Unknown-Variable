@@ -18,3 +18,7 @@
   max-width: 800px;
   margin: 0 auto;
 }
+
+body {
+  background-color: #FF0000;
+}
