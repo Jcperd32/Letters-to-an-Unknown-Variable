@@ -48,7 +48,7 @@ header {
   flex: 1;                
 }
 
-#books .section-image {
+.section-image {
   flex: 1;               
   max-width: 25%;          
   height: auto;            
@@ -60,5 +60,11 @@ header {
   height: auto;
   text-align: center;
 }
+
+#books .section-image {
+  max-width: 40%;
+  height: auto;
+}
+
 
 
