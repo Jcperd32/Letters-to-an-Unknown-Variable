@@ -6,6 +6,10 @@ body {
   color: #ffffff;
 }
 
+header {
+  text-align: center;
+}
+
 #navbar {
   background: #1b1b1b;
   padding: 1rem;
@@ -16,7 +20,8 @@ body {
   margin: 0 0.5rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  background: #707070;
+  background: #CCCCCC;
+  color: #f8f8ff;
 }
 
 .content-section {
@@ -25,7 +30,7 @@ body {
   margin: 0 auto;
 }
 
-.content-wrapper {
+.content-wrapper right{
   display: flex;           
   gap: 2rem;               /* space between text and the image */
   align-items: center;     /* to center */
@@ -39,7 +44,7 @@ body {
 
 .section-image {
   flex: 1;               
-  max-width: 50%;          
+  max-width: 25%;          
   height: auto;            
   border-radius: 8px;      
 }
