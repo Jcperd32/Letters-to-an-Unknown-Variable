@@ -33,19 +33,22 @@ header {
   margin: 0 auto;
 }
 
-.content-wrapper-right{
-  display: flex;           
-  gap: 2rem;               /* space between text and the image */
-  align-items: center;     /* to center */
+.content-wrapper-right, 
+.content-wrapper-left {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
+.content-wrapper-left {
+  flex-direction: row-reverse;
+}
 
 .text-content {
   flex: 1;                
 }
 
-
-.section-image {
+#books .section-image {
   flex: 1;               
   max-width: 25%;          
   height: auto;            
