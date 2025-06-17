@@ -30,7 +30,7 @@ header {
   margin: 0 auto;
 }
 
-.content-wrapper right{
+.content-wrapper-right{
   display: flex;           
   gap: 2rem;               /* space between text and the image */
   align-items: center;     /* to center */
