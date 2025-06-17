@@ -65,7 +65,7 @@ header {
 
 .section-image {
   flex: 1;               
-  max-width: 35%;          
+  max-width: 30%;          
   height: auto;            
   border-radius: 8px;      
 }
