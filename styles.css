@@ -65,7 +65,7 @@ header {
 
 .section-image {
   flex: 1;               
-  max-width: 25%;          
+  max-width: 35%;          
   height: auto;            
   border-radius: 8px;      
 }
@@ -110,13 +110,26 @@ header {
 
 #home .section-image {
     opacity: 0;
-    transform: translateX(100%) rotate (-360deg);
+    transform: translateX(100%) rotate(-360deg);
     transition: all 1s ease-out;
 }
 
 #home .active .section-image { 
-  opcity:1;
+  opacity: 1;
   transform: translate(0) rotate(0)
+}
+
+
+@media (max-width: 768px) {
+    .section-image {
+        max-width: 50% !important;
+        min-width: 200px;
+    }
+    .content-wrapper-right,
+    .content-wrapper-left {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 
