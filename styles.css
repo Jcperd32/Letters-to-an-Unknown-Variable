@@ -108,5 +108,15 @@ header {
   width: 100%;
 }
 
+#home .section-image {
+    opacity: 0;
+    transform: translateX(100%) rotate (-360deg);
+    transition: all 1s ease-out;
+}
+
+#home .active .section-image { 
+  opcity:1;
+  transform: translate(0) rotate(0)
+}
 
 
