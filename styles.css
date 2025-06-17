@@ -114,7 +114,7 @@ header {
     transition: all 1s ease-out;
 }
 
-#home .active .section-image { 
+#home.active .section-image { 
   opacity: 1;
   transform: translate(0) rotate(0)
 }
@@ -122,8 +122,9 @@ header {
 
 @media (max-width: 768px) {
     .section-image {
-        max-width: 50% !important;
-        min-width: 200px;
+        max-width: 80% !important;
+        min-width: 250px;
+        margin: 0 auto;
     }
     .content-wrapper-right,
     .content-wrapper-left {
