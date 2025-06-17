@@ -25,4 +25,23 @@ body {
   margin: 0 auto;
 }
 
+.content-wrapper {
+  display: flex;           
+  gap: 2rem;               /* space between text and the image */
+  align-items: center;     /* to center */
+}
+
+
+.text-content {
+  flex: 1;                
+}
+
+
+.section-image {
+  flex: 1;               
+  max-width: 50%;          
+  height: auto;            
+  border-radius: 8px;      
+}
+
 
