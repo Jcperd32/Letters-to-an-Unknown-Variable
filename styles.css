@@ -37,7 +37,7 @@ header {
 .content-wrapper-left {
   display: flex;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
 }
 
 .content-wrapper-left {
@@ -45,7 +45,7 @@ header {
 }
 
 .text-content {
-  flex: 1;                
+  flex: 1; 
 }
 
 .section-image {
