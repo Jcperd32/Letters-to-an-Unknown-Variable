@@ -81,5 +81,32 @@ header {
   height: auto;
 }
 
+/* Book title hover effects */
+#books h3 {
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+#books h3:hover {
+  color: #ffd700; /* Gold color */
+}
+
+/* Optional underline animation */
+#books h3::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+#books h3:hover::after {
+  width: 100%;
+}
+
 
 
