@@ -20,10 +20,13 @@ header {
   margin: 0 0.5rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  background: #CCCCCC;
+  background: #808080;
   color: #f8f8ff;
 }
 
+.intro {
+  text-align: center;
+}
 .content-section {
   padding: 2rem;
   max-width: 800px;
