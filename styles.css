@@ -120,17 +120,5 @@ header {
 }
 
 
-@media (max-width: 768px) {
-    .section-image {
-        max-width: 80% !important;
-        min-width: 250px;
-        margin: 0 auto;
-    }
-    .content-wrapper-right,
-    .content-wrapper-left {
-        flex-direction: column;
-        align-items: center;
-    }
-}
 
 
