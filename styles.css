@@ -2,12 +2,12 @@
 .active { display: block; }
 
 body {
-  background-color: #708090;
+  background-color: #1b1b1b;
   color: #ffffff;
 }
 
 #navbar {
-  background: #2E8B57;
+  background: #1b1b1b;
   padding: 1rem;
   text-align: center;
 }
