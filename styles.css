@@ -158,7 +158,7 @@ header {
 
 #people .content-wrapper-left {
   display: flex;
-  align-items: right;
+  align-items: left;
   margin-bottom: 30px; 
 }
 
