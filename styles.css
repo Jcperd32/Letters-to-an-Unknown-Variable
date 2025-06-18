@@ -128,11 +128,11 @@ header {
   font-family: "Lucida Console", "Courier New", monospace;
 }
 
-#people .psm {
-  max-width: 35%;
+#people .section-image {
+  max-width: 40%;
   height: auto;
-  text-align: center;
 }
+
 
 
 
