@@ -34,6 +34,10 @@ header {
   text-align: center;
 }
 
+.subintro {
+  text-align: left;
+}
+
 .content-section {
   padding: 2rem;
   max-width: 800px;
@@ -119,6 +123,18 @@ header {
   transform: translate(0) rotate(0)
 }
 
+.quotes {
+  font-style: italic;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.psm {
+  max-width: 35%;
+  height: auto;
+  text-align: center;
+}
+
+}
 
 
 
