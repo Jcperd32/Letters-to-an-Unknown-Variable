@@ -93,10 +93,10 @@ header {
 }
 
 #books h3:hover {
-  color: #ffd700; /* Gold color */
+  color: #ffd700;
 }
 
-/* Optional underline animation */
+
 #books h3::after {
   content: '';
   position: absolute;
@@ -125,7 +125,8 @@ header {
 
 .quote {
   font-style: italic;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: cursive;
+  
 }
 
 
