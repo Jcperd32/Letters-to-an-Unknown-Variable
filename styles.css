@@ -198,14 +198,14 @@ header {
 }
 
 .music-artist-image {
-  flex: 0 0 150px;
-  max-width: 150px;
+  flex: 0 0 250px;
+  max-width: 250px;
 }
 
 .music-artist-image img {
   width: 100%;
   height: auto;
-  max-height: 150px;
+  max-height: 200px;
   border-radius: 8px;
   object-fit: cover;
 }
