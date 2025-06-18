@@ -238,7 +238,7 @@ header {
 }
 
 .social-icon {
-  color: #fff;
+  color: #ffffff;
   transition: transform 0.3s ease, color 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -248,7 +248,7 @@ header {
 }
 
 .social-icon:hover {
-  color: #ffd700;
+  color: #990000;
   transform: translateY(-3px);
 }
 
