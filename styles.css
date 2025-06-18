@@ -165,15 +165,14 @@ header {
 }
 
 .media-container {
-  width: 300px;
-  height: 200px
-  flex-shrink: 0;
-  margin: 0 20px;
+  width: 100%;
+  height: auto;
+  margin: 0;
   position: relative;
-  overflow: hidden;
+
 }
 
-.video-wrapper iframe {
+.video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
@@ -188,19 +187,32 @@ header {
   height: 100%;
 }
 
-.media-group {
+.music-section {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 20px;
-  flex-shrink: 0;
+  margin-bottom: 30px;
 }
 
-.content-wrapper-right .media-group {
-  margin-left: 20px;
+.music-artist-image {
+  flex: 1;
+  max-width: 30%;
 }
 
-.content-wrapper-left .media-group {
-  margin-right: 20px;
+.music-artist-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.music-artist-info {
+  flex: 2;
+  padding: 0 20px;
+}
+
+.music-artist-video {
+  flex: 3;
 }
 
 
