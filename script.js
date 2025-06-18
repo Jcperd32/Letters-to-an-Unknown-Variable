@@ -27,3 +27,19 @@ document.querySelectorAll(
   scrollObserver.observe(element);
 });
 
+const videoPlayers = [];
+
+function stopAllVideos() {
+  videoPlayers.forEach(player => {
+    player.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+  });
+}
+
+document.querySelectorAll('.video-wrapper iframe').forEach((iframe, index) => {
+  iframe.id = `yt-player-${index}`;
+  videoPlayers.push(iframe);
+  
+  iframe.closest('.media-container').addEventListener('click', () => {
+    stopAllVideos();
+  });
+});
