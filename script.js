@@ -26,5 +26,4 @@ document.querySelectorAll(
 ).forEach(element => {
   scrollObserver.observe(element);
 });
-  scrollObserver.observe(element);
-});
+
