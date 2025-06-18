@@ -129,8 +129,8 @@ header {
 }
 
 #people .section-image {
-  max-width: 40%;
-  height: auto;
+  max-width: 100px;
+  height: 175px;
 }
 
 
