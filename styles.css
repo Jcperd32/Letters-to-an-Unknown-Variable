@@ -177,6 +177,7 @@ header {
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
+  background: #000;
 }
 
 .video-wrapper iframe {
@@ -185,6 +186,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
+  border: none;
 }
 
 .music-section {
@@ -192,27 +194,31 @@ header {
   flex-direction: row;
   gap: 20px;
   margin-bottom: 30px;
+  align-items: center;
 }
 
 .music-artist-image {
-  flex: 1;
-  max-width: 30%;
+  flex: 0 0 150px;
+  max-width: 150px;
 }
 
 .music-artist-image img {
   width: 100%;
   height: auto;
+  max-height: 150px;
   border-radius: 8px;
   object-fit: cover;
 }
 
 .music-artist-info {
-  flex: 2;
+  flex: 1;
   padding: 0 20px;
+  min-width: 200px;
 }
 
 .music-artist-video {
-  flex: 3;
+  flex: 1;
+  min-width: 0;
 }
 
 
