@@ -27,15 +27,16 @@ document.querySelectorAll('.content-wrapper-right, .content-wrapper-left').forEa
   wrapperObserver.observe(wrapper);
 });
 
-
-const sectionObserver = new IntersectionObserver((entries) => {
+const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('active');
+      entry.target.classList.add('show');
     }
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.content-section').forEach(section => {
-  sectionObserver.observe(section);
+document.querySelectorAll(
+  '.content-wrapper-right, .content-wrapper-left, .intro, .subintro'
+).forEach(element => {
+  scrollObserver.observe(element);
 });
