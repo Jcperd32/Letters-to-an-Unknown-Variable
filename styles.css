@@ -285,9 +285,10 @@ header {
   }
   
   .music-artist-image {
-    display: block;
+    display: block !important;
     flex: 1;
-    max-width: 250px;
+    max-width: 100% !important;
+    margin: 0 auto 1rem !important;
   }
   
   .music-artist-image img {
