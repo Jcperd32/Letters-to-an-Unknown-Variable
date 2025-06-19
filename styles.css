@@ -31,10 +31,15 @@ header {
 }
 
 .nav-btn:hover {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  text-shadow: rgba(255, 255, 255, 0.1);
   transform: scale(1.05); 
+  box-shadow: 0 0 10px (rgba(255, 255, 255, 0.1);
 }
 
+.nav-btn.active {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
 .content-section {
   padding: 2rem;
   max-width: 800px;
