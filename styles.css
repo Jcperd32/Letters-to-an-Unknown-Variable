@@ -348,9 +348,9 @@ header {
     margin: 0 auto 1rem !important;
   }
   
-  #book .section-image {
-    width: 200px !important;
-    height: 275px !important;
+  #books .section-image {
+    width: 300px !important;
+    height: 425px !important;
     margin: 0 auto 1rem !important;
   }
   
