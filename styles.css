@@ -20,6 +20,7 @@
   transition: transform 1.5s ease;
 }
 
+/* Book Covers and Pages */
 .front-cover, .back-cover, .pages {
   position: absolute;
   width: 100%;
@@ -54,7 +55,6 @@
   padding: 20px;
   color: #f5f3f2;
   font-family: cursive;
-  
 }
 
 .front-cover h1 {
@@ -125,33 +125,6 @@
   100% { transform: scale(0); opacity: 0; }
 }
 
-
-body.loading {
-  overflow: hidden;
-}
-
-.ambient-light {
-  position: absolute;
-  width: 350px;
-  height: 500px;
-  background: radial-gradient(circle at center, rgba(201, 167, 105, 0.15) 0%, transparent 70%);
-  z-index: -1;
-  transition: transform 0.5s ease, opacity 1s ease;
-  pointer-events: none;
-}
-
-.book .spine {
-  position: absolute;
-  width: 15px;
-  height: 100%;
-  background: linear-gradient(to right, #5a3d21 0%, #7a5d3f 100%);
-  left: -15px;
-  top: 0;
-  transform-origin: right center;
-  transform: rotateY(90deg);
-  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
-}
-
 .fade-in {
   animation: fadeIn 1s ease forwards;
 }
@@ -161,9 +134,14 @@ body.loading {
   to { opacity: 1; transform: translateY(0); }
 }
 
+
 body {
   background-color: #1b1b1b;
   color: #ffffff;
+}
+
+body.loading {
+  overflow: hidden;
 }
 
 .hidden { display: none; }
@@ -282,6 +260,7 @@ header {
   text-align: left;
 }
 
+
 #home .section-image {
   opacity: 0;
   transform: translateX(100%) rotate(-360deg);
@@ -351,6 +330,7 @@ header {
   width: 100%;
 }
 
+/* Miscellaneous Elements */
 .end-img {
   max-width: 10%;
   height: auto;
@@ -405,6 +385,7 @@ header {
   width: 100%;
 }
 
+
 .site-footer {
   background-color: #2a2a2a;
   padding: 1.5rem 0;
@@ -439,6 +420,27 @@ header {
   font-size: 0.85rem;
   color: #aaa;
   margin: 0;
+}
+.ambient-light {
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  background: radial-gradient(circle at center, rgba(201, 167, 105, 0.15) 0%, transparent 70%);
+  z-index: -1;
+  transition: transform 0.5s ease, opacity 1s ease;
+  pointer-events: none;
+}
+
+.book .spine {
+  position: absolute;
+  width: 15px;
+  height: 100%;
+  background: linear-gradient(to right, #5a3d21 0%, #7a5d3f 100%);
+  left: -15px;
+  top: 0;
+  transform-origin: right center;
+  transform: rotateY(90deg);
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 769px) {
@@ -505,6 +507,7 @@ header {
     max-width: 100% !important;
     margin: 0 auto 1rem !important;
   }
+  
   #home .section-image {
     width: 175px !important;
     height: 250px !important;
@@ -526,9 +529,7 @@ header {
   .end-img {
     max-width: 80px;
   }
-}
-
-@media (max-width: 768px) {
+  
   .book {
     width: 200px;
     height: 300px;
@@ -554,10 +555,6 @@ header {
   .title-container {
     padding: 10px;
   }
-}
-
-body.loading {
-  overflow-x: hidden;
 }
 
 @media (max-width: 480px) {
