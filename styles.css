@@ -499,3 +499,46 @@ header {
     max-width: 80px;
   }
 }
+
+@media (max-width: 768px) {
+  .book {
+    width: 200px;
+    height: 300px;
+  }
+  
+  .front-cover h1 {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+  
+  .click-hint span {
+    font-size: 10px;
+  }
+  
+  .book.open {
+    transform: translateX(100px) translateZ(30px);
+  }
+  
+  .front-cover {
+    padding: 15px 10px;
+  }
+  
+  .title-container {
+    padding: 10px;
+  }
+}
+
+body.loading {
+  overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+  .book {
+    width: 180px;
+    height: 270px;
+  }
+  
+  .front-cover h1 {
+    font-size: 16px;
+  }
+}
