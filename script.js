@@ -1,3 +1,34 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const book = document.querySelector('.book');
+  const bookLoader = document.getElementById('bookLoader');
+  const mainContent = document.getElementById('mainContent');
+  
+  document.body.classList.add('loading');
+  
+  mainContent.style.display = 'none';
+
+  book.addEventListener('click', function() {
+    book.classList.add('open');
+    
+    setTimeout(function() {
+      bookLoader.classList.add('zoom-out');
+
+      setTimeout(function() {
+        bookLoader.style.display = 'none';
+        mainContent.style.display = 'block';
+        document.body.classList.remove('loading');
+        mainContent.style.animation = 'fadeIn 1s ease';
+      }, 1500);
+    }, 1500);
+  });
+
+  setTimeout(function() {
+    if (!book.classList.contains('open')) {
+      book.click(); 
+    }
+  }, 6000);
+});
+
 document.querySelectorAll(".nav-btn").forEach(button => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".content-section").forEach(section => {
