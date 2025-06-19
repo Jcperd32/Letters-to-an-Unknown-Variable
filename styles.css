@@ -21,7 +21,6 @@
   cursor: pointer;
 }
 
-/* Book Covers and Pages */
 .front-cover, .back-cover, .pages {
   position: absolute;
   width: 100%;
@@ -71,13 +70,29 @@
   text-align: center;
   padding: 20px;
   color: #f5f3f2;
-  font-family: cursive;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .front-cover h1 {
-  font-size: 22px;
-  line-height: 1.3;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.front-cover h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #c9a769;
+    opacity: 0.7;
 }
 
 .back-cover {
