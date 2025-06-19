@@ -442,6 +442,22 @@ header {
   border-radius: 8px;      
 }
 
+.content-wrapper-right .section-image,
+.content-wrapper-left .section-image {
+  max-width: 50% !important; 
+  margin: 0 auto 1rem; 
+  float: none !important; 
+  display: block; 
+}
+  
+
+#people .section-image {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 auto 1rem !important;
+}
+
 .music-section {
   display: flex;
   flex-direction: column;
