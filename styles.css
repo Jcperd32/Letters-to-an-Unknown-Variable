@@ -26,13 +26,14 @@ header {
   color: #f8f8ff;
   border-radius: 25px;
   transition: all 0.3s ease;
-  font-size:1rem;
+  font-size: 0.5rem;
   
 }
 
 .nav-btn:hover {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
   transform: scale(1.05); 
+  color: #990000;
 }
 
 .content-section {
