@@ -342,6 +342,17 @@ header {
     max-width: 100% !important;
     margin: 0 auto 1rem !important;
   }
+  #home .section-image {
+    width: 175px !important;
+    height: 250px !important;
+    margin: 0 auto 1rem !important;
+  }
+  
+  #book .section-image {
+    width: 200px !important;
+    height: 275px !important;
+    margin: 0 auto 1rem !important;
+  }
   
   #people .section-image {
     width: 150px !important;
