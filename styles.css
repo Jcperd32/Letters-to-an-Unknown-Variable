@@ -108,7 +108,8 @@ header {
   flex: 1;               
   max-width: 30%;          
   height: auto;            
-  border-radius: 8px;      
+  border-radius: 8px;  
+  object-fit: contain;
 }
 
 .intro {
