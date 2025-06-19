@@ -94,7 +94,6 @@ header {
   display: flex;
   gap: 2rem;
   align-items: start;
-  margin-bottom: 2rem;
 }
 
 .content-wrapper-left {
@@ -106,15 +105,21 @@ header {
 }
 
 .section-image {
-  flex: 1;
-  max-width: 40%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: contain;
+  flex: 1;               
+  max-width: 30%;          
+  height: auto;            
+  border-radius: 8px;  
+}
+
+.intro {
+  text-align: center;
+}
+
+.subintro {
+  text-align: left;
 }
 
 #home .section-image {
-  max-width: 50%;
   opacity: 0;
   transform: translateX(100%) rotate(-360deg);
   transition: all 1s ease-out;
@@ -143,12 +148,14 @@ header {
   display: block;
 }
 
-.intro {
-  text-align: center;
+#people .content-wrapper-right,
+#people .content-wrapper-left {
+  margin-bottom: 30px;
 }
 
-.subintro {
-  text-align: left;
+#people .text-content {
+  flex: 1;
+  min-width: 0; 
 }
 
 #books .section-image {
@@ -182,16 +189,14 @@ header {
 }
 
 .end-img {
-  max-width: 100px;
+  max-width: 10%;
   height: auto;
-  margin: 0 auto;
-  display: block;
+  text-align: center;
 }
 
 .quote {
   font-family: serif;
-  font-size: 0.9em;
-  font-style: italic;
+  font-size: 0.75em;
 }
 
 .media-container {
@@ -274,28 +279,6 @@ header {
 }
 
 @media (min-width: 769px) {
-  .content-wrapper-right, 
-  .content-wrapper-left {
-    flex-direction: row;
-  }
-  
-  .content-wrapper-left {
-    flex-direction: row-reverse;
-  }
-  
-  .section-image {
-    max-width: 40%;
-  }
-  
-  #home .section-image {
-    max-width: 50%;
-  }
-  
-  #people .section-image {
-    width: 200px;
-    height: 300px;
-  }
-  
   .music-section {
     flex-direction: row;
     align-items: center;
@@ -356,16 +339,16 @@ header {
   
   .section-image {
     max-width: 100% !important;
-    width: 100% !important;
     margin: 0 auto 1rem !important;
   }
   
   #people .section-image {
-    height: 300px !important;
-    width: 200px !important;
+    width: 150px !important;
+    height: 225px !important;
     margin: 0 auto 1rem !important;
   }
+  
+  .end-img {
+    max-width: 80px;
+  }
 }
-
-
-
