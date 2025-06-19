@@ -142,11 +142,11 @@
 }
 
 .book.open {
-  transform: translateX(150px) translateZ(50px);
+  transform: translateX(150px) translateZ(50px) rotateY(-10deg);
 }
 
-.book.open {
-  transform: translateX(150px) translateZ(50px) rotateY(-10deg);
+.book.open .front-cover {
+  transform: rotateY(-160deg);
 }
 
 .zoom-out {
