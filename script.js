@@ -2,33 +2,66 @@ document.addEventListener('DOMContentLoaded', function() {
   const book = document.querySelector('.book');
   const bookLoader = document.getElementById('bookLoader');
   const mainContent = document.getElementById('mainContent');
+  const ambientLight = document.querySelector('.ambient-light');
   
+  const spine = document.createElement('div');
+  spine.className = 'spine';
+  book.appendChild(spine);
+
   document.body.classList.add('loading');
-  
   mainContent.style.display = 'none';
 
   book.addEventListener('click', function() {
+    book.style.pointerEvents = 'none';
+    
+    const shimmer = document.createElement('div');
+    shimmer.style.position = 'absolute';
+    shimmer.style.width = '100%';
+    shimmer.style.height = '100%';
+    shimmer.style.top = '0';
+    shimmer.style.left = '0';
+    shimmer.style.background = 'radial-gradient(circle at center, rgba(201, 167, 105, 0.8) 0%, transparent 70%)';
+    shimmer.style.opacity = '0';
+    shimmer.style.transition = 'opacity 0.5s ease';
+    book.appendChild(shimmer);
+    
+    setTimeout(() => {
+      shimmer.style.opacity = '1';
+      setTimeout(() => {
+        shimmer.style.opacity = '0';
+        setTimeout(() => shimmer.remove(), 500);
+      }, 300);
+    }, 50);
+
     book.classList.add('open');
+    ambientLight.style.transform = 'scale(1.5)';
+    ambientLight.style.opacity = '0';
     
     setTimeout(function() {
       bookLoader.classList.add('zoom-out');
-
       setTimeout(function() {
         bookLoader.style.display = 'none';
         mainContent.style.display = 'block';
         document.body.classList.remove('loading');
-        mainContent.style.animation = 'fadeIn 1s ease';
+        mainContent.classList.add('fade-in');
       }, 1500);
     }, 1500);
   });
-
-  setTimeout(function() {
+-
+  book.addEventListener('mouseenter', function() {
     if (!book.classList.contains('open')) {
-      book.click(); 
+      book.style.transform = 'translateZ(20px)';
+      ambientLight.style.transform = 'scale(1.1)';
     }
-  }, 60000);
-});
-
+  });
+  
+  book.addEventListener('mouseleave', function() {
+    if (!book.classList.contains('open')) {
+      book.style.transform = 'translateZ(0)';
+      ambientLight.style.transform = 'scale(1)';
+    }
+  });
+  
 document.querySelectorAll(".nav-btn").forEach(button => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".content-section").forEach(section => {
