@@ -13,15 +13,6 @@ document.querySelectorAll(".nav-btn").forEach(button => {
   });
 });
 
-document.querySelector('.book-cover').addEventListener('click', function() {
-  const preloader = document.getElementById('book-preloader');
-  preloader.classList.add('book-open');
-  
-  setTimeout(() => {
-    preloader.style.display = 'none';
-    document.getElementById('main-content').classList.remove('hidden');
-  }, 1000); 
-});
 const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
