@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!book.classList.contains('open')) {
       book.click(); 
     }
-  }, 6000);
+  }, 60000);
 });
 
 document.querySelectorAll(".nav-btn").forEach(button => {
