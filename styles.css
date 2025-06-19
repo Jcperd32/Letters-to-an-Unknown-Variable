@@ -31,7 +31,7 @@
 }
 
 .front-cover {
-  background: #5c3b21;
+  background: #751a09;
   border-radius: 2px 15px 15px 2px;
   box-shadow: 
       5px 5px 15px rgba(0, 0, 0, 0.3),
@@ -52,6 +52,7 @@
   width: 100%;
   text-align: center;
   padding: 20px;
+  color: #f5f3f2;
 }
 
 .front-cover h1 {
