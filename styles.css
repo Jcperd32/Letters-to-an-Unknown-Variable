@@ -438,7 +438,7 @@ header {
 .section-image {
   flex: 1;               
   max-width: 30%;          
-  height: auto;            
+  height: 50%;            
   border-radius: 8px;      
 }
 
