@@ -53,7 +53,8 @@
   text-align: center;
   padding: 20px;
   color: #f5f3f2;
-  font: cursive;
+  font-family: cursive;
+  
 }
 
 .front-cover h1 {
