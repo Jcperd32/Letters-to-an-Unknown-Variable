@@ -435,22 +435,6 @@ header {
   }
 }
 
-.section-image {
-  flex: 1;               
-  max-width: 30%;          
-  height: 50%;            
-  border-radius: 8px;      
-}
-
-.content-wrapper-right .section-image,
-.content-wrapper-left .section-image {
-  max-width: 50% !important; 
-  margin: 0 auto 1rem; 
-  float: none !important; 
-  display: block; 
-}
-  
-
 #people .section-image {
   width: 100% !important;
   height: auto !important;
