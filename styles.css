@@ -400,7 +400,6 @@ header {
 }
 
 @media (max-width: 768px) {
-  /* Header adjustments */
   .header-container {
     flex-direction: column;
     align-items: flex-start;
@@ -426,11 +425,6 @@ header {
   .content-wrapper-left {
     flex-direction: column;
     gap: 1rem;
-  }
-  
-  .section-image {
-    max-width: 100% !important;
-    margin: 0 auto;
   }
   
   #people .section-image {
