@@ -7,9 +7,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1b1b1b;
-  z-index: 2000;
-  transition: opacity 0.5s ease;
+  background: radial-gradient(circle at center, #1a120b 0%, #0f0a06 100%);
+  z-index: 1000;
+  transition: all 1.5s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .book {
@@ -32,7 +32,7 @@
 }
 
 .front-cover {
-  background: linear-gradient(135deg, #4A4A4A 0%, #5c3b21 100%);
+  background: linear-gradient(135deg, #3a2513 0%, #5c3b21 100%);
   border-radius: 2px 15px 15px 2px;
   box-shadow: 
       10px 10px 30px rgba(0, 0, 0, 0.5),
@@ -71,6 +71,7 @@
   padding: 20px;
   color: #f5f3f2;
   font-family: 'Cormorant Garamond', serif;
+  transform: translate(10px);
 }
 
 .front-cover h1 {
@@ -96,9 +97,13 @@
 }
 
 .back-cover {
-  background: #4a3524;
-  border-radius: 15px 2px 2px 15px;
-  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #2e1e10 0%, #4a3524 100%);
+    border-radius: 15px 2px 2px 15px;
+    box-shadow: 
+        -10px 10px 30px rgba(0, 0, 0, 0.5),
+        inset -5px 0 15px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .pages {
@@ -132,22 +137,25 @@
   flex-direction: column;
   align-items: center;
   margin-top: auto;
+  transform: translaeZ(10px);
 }
 
 .circle {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+  background: rgba(201, 167, 105, 0.7);
+  box-shadow: 0 0 10px 5px rgba(201, 167, 105, 0.3);
   animation: pulse 2s infinite;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .click-hint span {
   color: #e8d8c0;
   font-size: 12px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  lette-spacing: 1px;
+  font-weight: 300;
 }
 
 @keyframes pulse {
