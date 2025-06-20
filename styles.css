@@ -471,11 +471,12 @@ header {
 }
 .ambient-light {
   position: absolute;
-  width: 350px;
-  height: 500px;
-  background: radial-gradient(circle at center, rgba(201, 167, 105, 0.15) 0%, transparent 70%);
+  width: 400px;
+  height: 550px;
+  background: radial-gradient(circle at center, rgba(139, 69, 19, 0.2) 0%, transparent 70%);
+  filter: blur(20px);
   z-index: -1;
-  transition: transform 0.5s ease, opacity 1s ease;
+  transition: all 1.5s ease;
   pointer-events: none;
 }
 
