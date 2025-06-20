@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const mainContent = document.getElementById('mainContent');
   const ambientLight = document.querySelector('.ambient-light');
 
+
   const spine = document.createElement('div');
   spine.className = 'spine';
   book.appendChild(spine);
@@ -12,11 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
   document.body.classList.add('loading');
   mainContent.style.display = 'none';
 
-
   book.addEventListener('click', function() {
     handleBookClick();
   });
-
 
   book.addEventListener('mouseenter', function() {
     if (!book.classList.contains('open')) {
@@ -32,8 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+
   document.querySelectorAll(".nav-btn").forEach(button => {
-    button.addEventListener("click", handleNavButtonClick);
+    button.addEventListener("click", function() {
+      const sectionId = this.getAttribute("data-section");
+      loadSection(sectionId);
+    });
   });
 
   const scrollObserver = new IntersectionObserver((entries) => {
@@ -44,21 +47,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll(
-    '.content-wrapper-right, .content-wrapper-left, .intro, .subintro'
-  ).forEach(element => {
-    scrollObserver.observe(element);
-  });
 
-  // Video player controls
   const videoPlayers = [];
+
+  loadSection('home');
   initializeVideoPlayers();
 
-  // Functions
   function handleBookClick() {
     book.style.pointerEvents = 'none';
     
-    // Create shimmer effect
+
     const shimmer = document.createElement('div');
     shimmer.style.position = 'absolute';
     shimmer.style.width = '100%';
@@ -93,17 +91,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1500);
   }
 
-  function handleNavButtonClick() {
-    document.querySelectorAll(".content-section").forEach(section => {
-      section.classList.add("hidden");
-      section.classList.remove("active");
-    });
+  async function loadSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    
 
-    const targetId = this.getAttribute("data-section");
-    const targetSection = document.getElementById(targetId);
-    targetSection.classList.add("active");
-    targetSection.classList.remove("hidden");
-    targetSection.scrollIntoView({ behavior: 'smooth' });
+    if (section.innerHTML === '') {
+      try {
+        const response = await fetch(`sections/${sectionId}.html`);
+        section.innerHTML = await response.text();
+        
+
+        if (sectionId === 'books') {
+          loadCSS('styles/books.css');
+        }
+
+        document.querySelectorAll(
+          '.content-wrapper-right, .content-wrapper-left, .intro, .subintro'
+        ).forEach(element => {
+          scrollObserver.observe(element);
+        });
+
+
+        initializeVideoPlayers();
+      } catch (error) {
+        section.innerHTML = '<p>Error loading content</p>';
+      }
+    }
+    
+    // Show the section
+    document.querySelectorAll('.content-section').forEach(s => {
+      s.classList.add('hidden');
+      s.classList.remove('active');
+    });
+    section.classList.remove('hidden');
+    section.classList.add('active');
+    section.scrollIntoView({ behavior: 'smooth' });
+
+    stopAllVideos();
+  }
+
+  function loadCSS(href) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
   }
 
   function stopAllVideos() {
@@ -114,12 +145,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function initializeVideoPlayers() {
     document.querySelectorAll('.video-wrapper iframe').forEach((iframe, index) => {
-      iframe.id = `yt-player-${index}`;
-      videoPlayers.push(iframe);
-      
-      iframe.closest('.media-container').addEventListener('click', () => {
-        stopAllVideos();
-      });
+      if (!iframe.id) {
+        iframe.id = `yt-player-${index}`;
+        videoPlayers.push(iframe);
+        
+        iframe.closest('.media-container').addEventListener('click', () => {
+          stopAllVideos();
+        });
+      }
     });
   }
 });
