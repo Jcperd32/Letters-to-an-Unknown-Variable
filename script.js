@@ -3,12 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const bookLoader = document.getElementById('bookLoader');
   const mainContent = document.getElementById('mainContent');
   const ambientLight = document.querySelector('.ambient-light');
-
+  const contentContainer = document.getElementById('content-container');
 
   const spine = document.createElement('div');
   spine.className = 'spine';
   book.appendChild(spine);
-
 
   document.body.classList.add('loading');
   mainContent.style.display = 'none';
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-
   document.querySelectorAll(".nav-btn").forEach(button => {
     button.addEventListener("click", function() {
       const sectionId = this.getAttribute("data-section");
@@ -50,13 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const videoPlayers = [];
 
-  loadSection('home');
-  initializeVideoPlayers();
 
   function handleBookClick() {
     book.style.pointerEvents = 'none';
     
-
     const shimmer = document.createElement('div');
     shimmer.style.position = 'absolute';
     shimmer.style.width = '100%';
@@ -87,69 +82,75 @@ document.addEventListener('DOMContentLoaded', function() {
         mainContent.style.display = 'block';
         document.body.classList.remove('loading');
         mainContent.classList.add('fade-in');
+        loadSection('home');
       }, 1500);
     }, 1500);
   }
 
   async function loadSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    
-
-    if (section.innerHTML === '') {
-      try {
-        const response = await fetch(`sections/${sectionId}.html`);
-        section.innerHTML = await response.text();
-        
-
-        if (sectionId === 'books') {
-          loadCSS('styles/books.css');
-        }
-
-        document.querySelectorAll(
-          '.content-wrapper-right, .content-wrapper-left, .intro, .subintro'
-        ).forEach(element => {
-          scrollObserver.observe(element);
-        });
-
-
-        initializeVideoPlayers();
-      } catch (error) {
-        section.innerHTML = '<p>Error loading content</p>';
+    try {
+      const response = await fetch(`sections/${sectionId}.html`);
+      
+      if (!response.ok) {
+        throw new Error('Failed to load section');
       }
-    }
-    
-    // Show the section
-    document.querySelectorAll('.content-section').forEach(s => {
-      s.classList.add('hidden');
-      s.classList.remove('active');
-    });
-    section.classList.remove('hidden');
-    section.classList.add('active');
-    section.scrollIntoView({ behavior: 'smooth' });
+      
+      const html = await response.text();
+      contentContainer.innerHTML = html;
+      
+      if (sectionId === 'books') {
+        loadCSS('styles/books.css');
+      }
 
-    stopAllVideos();
+      document.querySelectorAll(
+        '.content-wrapper-right, .content-wrapper-left, .intro, .subintro'
+      ).forEach(element => {
+        scrollObserver.observe(element);
+      });
+
+      initializeVideoPlayers();
+    } catch (error) {
+      console.error('Error loading section:', error);
+      contentContainer.innerHTML = `
+        <div class="error-message">
+          <h2>Content Could Not Be Loaded</h2>
+          <p>We couldn't load the ${sectionId} content. Please try again later.</p>
+        </div>
+      `;
+    }
   }
 
   function loadCSS(href) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = href;
-    document.head.appendChild(link);
+    const existingLinks = Array.from(document.head.querySelectorAll('link')).filter(
+      link => link.href.includes(href)
+    );
+    
+    if (existingLinks.length === 0) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      document.head.appendChild(link);
+    }
   }
 
   function stopAllVideos() {
     videoPlayers.forEach(player => {
-      player.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      if (player.contentWindow) {
+        player.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      }
     });
   }
 
   function initializeVideoPlayers() {
+
+    videoPlayers.length = 0;
+    
     document.querySelectorAll('.video-wrapper iframe').forEach((iframe, index) => {
       if (!iframe.id) {
         iframe.id = `yt-player-${index}`;
         videoPlayers.push(iframe);
         
-        iframe.closest('.media-container').addEventListener('click', () => {
+        iframe.closest('.media-container')?.addEventListener('click', () => {
           stopAllVideos();
         });
       }
