@@ -1,4 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const bookLoader = document.getElementById('bookLoader');
+  const mainContent = document.getElementById('mainContent');
+  const loadingVideo = document.querySelector('.loading-video');
+  
+  document.querySelector('.front-cover').addEventListener('click', () => {
+  
+    bookLoader.style.display = 'none';
+    mainContent.style.display = 'block';
+  
+    if (loadingVideo) {
+      loadingVideo.pause();
+    }
+  });
+  
+  
+  const videoControlBtn = document.createElement('button');
+  videoControlBtn.className = 'video-control-btn';
+  videoControlBtn.innerHTML = '<i class="fas fa-pause"></i>';
+  document.body.appendChild(videoControlBtn);
+  
+  videoControlBtn.addEventListener('click', () => {
+    if (loadingVideo.paused) {
+      loadingVideo.play();
+      videoControlBtn.innerHTML = '<i class="fas fa-pause"></i>';
+    } else {
+      loadingVideo.pause();
+      videoControlBtn.innerHTML = '<i class="fas fa-play"></i>';
+    }
+  });
+  
   const book = document.querySelector('.book');
   const bookLoader = document.getElementById('bookLoader');
   const mainContent = document.getElementById('mainContent');
