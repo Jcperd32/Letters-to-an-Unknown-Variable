@@ -546,6 +546,8 @@ header {
   text-align: center;
   margin-top: 3rem;
   border-top: 1px solid #444;
+  position: relative;
+  z-index: 5;
 }
 
 .social-links {
