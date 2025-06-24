@@ -413,7 +413,7 @@ header {
   width: 100%;
 }
 /*Gallery*/
-.box-gallery{
+.gallery-box{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -479,7 +479,7 @@ header {
 #next {
   right: 20%;
 }
-.box-gallery img {
+.gallery-box img {
   width: 100%;
   height: auto;
   object-fit: contain;
