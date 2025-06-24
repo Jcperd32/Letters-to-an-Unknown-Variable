@@ -45,9 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, { threshold: 0.1 });
 
-
   const videoPlayers = [];
-
 
   function handleBookClick() {
     book.style.pointerEvents = 'none';
@@ -109,6 +107,39 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       initializeVideoPlayers();
+
+      // Initialize gallery only if we're in the gallery section
+      if (sectionId === 'gallery') {
+        const imageContainerEl = document.querySelector(".image-container");
+        const prevEl = document.getElementById("prev");
+        const nextEl = document.getElementById("next");
+        let x = 0;
+        let timer;
+        
+        if (prevEl && nextEl && imageContainerEl) {
+          prevEl.addEventListener("click", () => {
+            x = x + 45;
+            clearTimeout(timer);
+            updateGallery();
+          });
+          
+          nextEl.addEventListener("click", () => {
+            x = x - 45;
+            clearTimeout(timer);
+            updateGallery();
+          });
+          
+          function updateGallery() {
+            imageContainerEl.style.transform = `perspective(1000px) rotateY(${x}deg)`;
+            timer = setTimeout(() => {
+              x = x - 45;
+              updateGallery();
+            }, 3000);
+          }
+          
+          updateGallery();
+        }
+      }
     } catch (error) {
       console.error('Error loading section:', error);
       contentContainer.innerHTML = `
@@ -142,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function initializeVideoPlayers() {
-
     videoPlayers.length = 0;
     
     document.querySelectorAll('.video-wrapper iframe').forEach((iframe, index) => {
@@ -156,30 +186,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-  const imageContainerEl = document.querySelector(".image-container");
-  
-  const prevEl = document.getElementById("prev");
-  const nextEl = document.getElementById("next");
-  let x = 0;
-  let timer;
-  prevEl.addEventListener("click", () => {
-    x = x + 45;
-    clearTimeout(timer);
-    updateGallery();
-  });
-  nextEl.addEventListener("click", () => {
-    x = x - 45;
-    clearTimeout(timer);
-    updateGallery();
-  });
-  
-  function updateGallery() {
-    imageContainerEl.style.transform = `perspective(1000px) rotateY(${x}deg)`;
-    timer = setTimeout(() => {
-      x = x - 45;
-      updateGallery();
-    }, 3000);
-  }
-  
-  updateGallery();
 });
