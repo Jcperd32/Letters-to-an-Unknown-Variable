@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const bookLoader = document.getElementById('bookLoader');
   const mainContent = document.getElementById('mainContent');
   const ambientLight = document.querySelector('.ambient-light');
-  const contentContainer = document.getElementById('content-container');
+  const contentContainer = document.getElementById('content-container');//
 
   const spine = document.createElement('div');
   spine.className = 'spine';
