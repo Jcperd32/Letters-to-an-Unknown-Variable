@@ -414,7 +414,7 @@ header {
 }
 /*Gallery*/
 .gallery-box{
-  margin-top: 50px;
+  margin-top: 100px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -428,7 +428,7 @@ header {
 .image-container {
   position: relative;
   width: 150px;
-  height: 250px;
+  height: 200px;
   transform-style: preserve-3d;
   transform: perspective(1000px) rotateY(0deg);
   transition: transform 0.7s;
@@ -453,7 +453,7 @@ header {
 .btn-container {
   position: relative;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 2rem;
   z-index: 20;
 }
