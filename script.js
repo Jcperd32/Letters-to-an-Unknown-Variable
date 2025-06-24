@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
+/*just to see*/
 const imageContainerEl = document.querySelector(".image-container");
 
 const prevEl = document.getElementById("prev");
