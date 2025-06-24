@@ -223,11 +223,6 @@ body {
   color: #ffffff;
 }
 
-body #gallery{
-  text-align: center;
-  justify-content: center;
-}
-
 body.loading {
   overflow: hidden;
 }
@@ -418,6 +413,16 @@ header {
   width: 100%;
 }
 /*Gallery*/
+.box-gallery{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  justify-content: center;
+  background-color: black;
+}
 .image-container {
   position: relative;
   width: 200px;
