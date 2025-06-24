@@ -414,7 +414,7 @@ header {
 }
 /*Gallery*/
 .gallery-box{
-  margin-top: 20px;
+  margin-top: 100px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -453,20 +453,21 @@ header {
 .btn-container {
   position: relative;
   width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 1rem 0;
+  padding-bottom: 60px;
   z-index: 20;
 }
 
 .btn {
   position: absolute;
-  bottom: -80px;
-  background-color: slateblue;
+  bottom: 20px;
+  background-color: #8B0000;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  transform: translate(0);
 }
 
 .btn:hover {
