@@ -414,6 +414,7 @@ header {
 }
 /*Gallery*/
 .gallery-box{
+  margin-top: 20px
   position: relative;
   display: flex;
   flex-direction: column;
@@ -421,7 +422,7 @@ header {
   text-align: center;
   min-height: 100vh;
   justify-content: flex-start;
-  background-color: black;\
+  background-color: transparent;
   z-index: 10;
 }
 .image-container {
