@@ -414,21 +414,21 @@ header {
 }
 /*Gallery*/
 .gallery-box{
-  margin-top: 20px;
+  margin-top: 50px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
+  height: auto;
   justify-content: flex-start;
   background-color: transparent;
   z-index: 10;
 }
 .image-container {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 250px;
   transform-style: preserve-3d;
   transform: perspective(1000px) rotateY(0deg);
   transition: transform 0.7s;
@@ -481,7 +481,8 @@ header {
   right: 20%;
 }
 .gallery-box img {
-  width: 100%;
+  width: 150px;
+  height: 250px;
   height: auto;
   object-fit: contain;
 }
