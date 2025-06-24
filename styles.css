@@ -420,43 +420,41 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  heugth: auto;
-  padding-bottom: 80px;
+  min-height: 100vh;
   justify-content: flex-start;
   background-color: transparent;
   z-index: 10;
 }
 .image-container {
   position: relative;
-  width: 100%;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   transform-style: preserve-3d;
   transform: perspective(1000px) rotateY(0deg);
   transition: transform 0.7s;
-  margin: 1rem 0; 
+  margin: 2rem 0; 
 }
 
 .image-container span {
   position: absolute;
   top: 0;
   left: 0;
-  width: 150px;
-  height: 250px;
+  width: 100%;
   transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
 }
 
 .image-container span img {
   position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  object-position: center top;
 }
 
 .btn-container {
-  position: absolute;
+  position: relative;
   width: 100%;
-  bottom: 20px;
+  margin: 1rem 0;
+  padding-bottom: 60px;
   z-index: 20;
 }
 
