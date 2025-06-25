@@ -341,6 +341,21 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       initializeVideoPlayers();
+      //for math section
+      if (sectionId === 'math') {
+        if (!document.getElementById('MathJax-script')) {
+          const script = document.createElement('script');
+          script.id = 'MathJax-script';
+          script.async = true;
+          script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+          script.onload = () => {
+            if (typeof MathJax !== 'undefined') {
+              MathJax.typesetPromise(); 
+            }
+          };
+          document.head.appendChild(script);
+        }
+      }
 
       // Initialize gallery only if we're in the gallery section
       if (sectionId === 'gallery') {
