@@ -84,6 +84,214 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 1500);
     }, 1500);
   }
+  /*quote*/
+  function initializeQuotes() {
+  const quotes = [
+    {
+      content: "Once you've been loved once and have loved once, you cannot forget it.",
+      author: "Natsume Takashi"
+    },
+    {
+      content: "As I encountered kindness, I wanted to be kind myself. I wanted to be able to do something, just as others had done for me",
+      author: "Natsume Takashi"
+    },
+    {
+      content: "I called his name again and again. And I learned that each time, nothing called back. I learned that no matter how much you want something, how many times you scream to it, sometimes it's out of reach. I decided to stop calling out for someone who would never call back",
+      author: "Natsume Takashi"
+    },
+    {
+      content: "No matter what anybody tells you, words and ideas can change the world",
+      author: "Dead Poets Society"
+    },
+    {
+      content: "Carpe Diem. Seize the day, boys. Make your lives extraordinary",
+      author: "Dead Poets Society"
+    },
+    {
+      content: "Humanity is a vessel bruised and broken, barely able to contain its contents.",
+      author: "The Vegetarian by Han Kang"
+    },
+    {
+      content: "No matter what happens, even if it leaves scars, as long as you overcome it, that’s what matters.",
+      author: "Before the Coffee Gets Cold by Toshikazu Kawaguchi"
+    },
+    {
+      content: "The things that go unsaid are often the things that eat at you—whether because you didn’t get to have your say, or because the other person never got to hear you and really wanted to.",
+      author: "Everything I Never Told You by Celeste Ng"
+    },
+    {
+      content: "Girls are capable of doing everything men are capable of doing. Sometimes they have more imagination than men.",
+      author: "Hidden Figures by Margot Lee Shetterly"
+    },
+    {
+      content: "No matter what, I want to continue living with the awareness that I will die. Without that, I am not alive.",
+      author: "Kitchen by Banana Yoshimoto"
+    },
+    {
+      content: "Happiness is always determined by your heart. No one is born unhappy.",
+      author: "Ikigai by Héctor García and Francesc Miralles"
+    },
+    {
+      content: "The first to die at the end taught me that love is louder than death.",
+      author: "The First to Die at the End by Adam Silvera"
+    },
+    {
+      content: "Wasn’t friendship its own miracle, the finding of another person who made the entire lonely world seem somehow less lonely?",
+      author: "A Little Life by Hanya Yanagihara"
+    },
+    {
+      content: "Life is not easy for any of us. But what of that? We must have perseverance and above all confidence in ourselves.",
+      author: "Marie Curie"
+    },
+    {
+      content: "The world is a dangerous place to live; not because of the people who are evil, but because of the people who don’t do anything about it.",
+      author: "Albert Einstein"
+    },
+    {
+      content: "However difficult life may seem, there is always something you can do and succeed at.",
+      author: "Stephen Hawking"
+    },
+    {
+      content: "A mathematician is a machine for turning coffee into theorems.",
+      author: "Paul Erdős"
+    },
+    {
+      content: "I have no time. I need to finish my work before I die.",
+      author: "Évariste Galois"
+    },
+    {
+      content: "If I have seen further, it is by standing on the shoulders of giants.",
+      author: "Isaac Newton"
+    },
+    {
+      content: "There is nothing so barren as a mind closed to new ideas.",
+      author: "Gottfried Wilhelm Leibniz"
+    },
+    {
+      content: "To those who do not know mathematics, it is difficult to get across a real feeling as to the beauty, the deepest beauty, of nature.",
+      author: "Daniel Bernoulli"
+    },
+    {
+      content: "We realize the importance of our voices only when we are silenced.",
+      author: "Malala Yousafzai"
+    },
+    {
+      content: "You may not control all the events that happen to you, but you can decide not to be reduced by them.",
+      author: "Maya Angelou"
+    },
+    {
+      content: "The most difficult thing is the decision to act, the rest is merely tenacity.",
+      author: "Amelia Earhart"
+    },
+    {
+      content: "I am not free while any woman is unfree, even when her shackles are very different from my own.",
+      author: "Audre Lorde"
+    },
+    {
+      content: "If they don’t give you a seat at the table, bring a folding chair.",
+      author: "Shirley Chisholm"
+    },
+    {
+      content: "You must never be fearful about what you are doing when it is right.",
+      author: "Rosa Parks"
+    },
+    {
+      content: "I alone cannot change the world, but I can cast a stone across the waters to create many ripples.",
+      author: "Mother Teresa"
+    },
+    {
+      content: "The question isn’t who’s going to let me; it’s who’s going to stop me.",
+      author: "Ayn Rand"
+    },
+    {
+      content: "Courage is like a muscle. We strengthen it by use.",
+      author: "Ruth Bader Ginsburg"
+    },
+    {
+      content: "I was taught that the way of progress was neither swift nor easy.",
+      author: "Marie Curie"
+    },
+    {
+      content: "The world isn’t beautiful, and that’s why it is.",
+      author: "March Comes in Like a Lion"
+    },
+    {
+      content: "Even if you’re not rewarded, even if no one notices, you have to keep walking forward.",
+      author: "March Comes in Like a Lion"
+    },
+    {
+      content: "It’s okay to be weak. That’s why we have other people—to help us stand.",
+      author: "March Comes in Like a Lion"
+    },
+    {
+      content: "I don’t know what ‘I love you’ means, but if it makes you happy, I’ll say it as many times as you want.",
+      author: "Violet Evergarden"
+    },
+    {
+      content: "You cannot substitute anything for the people you’ve lost.",
+      author: "Violet Evergarden"
+    },
+    {
+      content: "Some words must be said face to face to truly reach someone.",
+      author: "Violet Evergarden"
+    },
+    {
+      content: "I found you. Finally, I found you… ",
+      author: "Anohana: The Flower We Saw That Day"
+    },
+    {
+      content: "We all grew up, but we never moved on.",
+      author: "Anohana: The Flower We Saw That Day"
+    },
+    {
+      content: "I don’t want to disappear… I still have so much I want to do.",
+      author: "Anohana: The Flower We Saw That Day"
+    },
+    {
+      content: "No matter how many times I fall, I have to stand up again.",
+      author: "A Silent Voice"
+    },
+    {
+      content: "I wanted to tell you… that I’m sorry.",
+      author: "A Silent Voice"
+    },
+    {
+      content: "I thought I was alone, but you were always there.",
+      author: "A Silent Voice"
+    }
+  ];
+
+  const quoteEl = document.getElementById("pquote");
+  const authorEl = document.getElementById("author");
+  const btnEl = document.getElementById("getbtn");
+
+  function showRandomQuote() {
+    if (!quoteEl || !authorEl) return; 
+    
+    quoteEl.style.opacity = 0;
+    authorEl.style.opacity = 0;
+    
+    setTimeout(() => {
+      const {content, author} = quotes[Math.floor(Math.random() * quotes.length)];
+      quoteEl.textContent = content;
+      authorEl.textContent = `~ ${author}`;
+      
+      quoteEl.style.opacity = 1;
+      authorEl.style.opacity = 1;
+    }, 300);
+  }
+
+  if (quoteEl && authorEl) {
+    showRandomQuote();
+    
+    if (btnEl) {
+      btnEl.addEventListener("click", showRandomQuote);
+    }
+  }
+}
+
+
+
   const btn = document.querySelector(".btn");
   const video = document.querySelector(".background-video");
   const fa= document.querySelector(".fa");
@@ -120,6 +328,10 @@ document.addEventListener('DOMContentLoaded', function() {
       
       if (sectionId === 'books') {
         loadCSS('styles/books.css');
+      }
+
+      if (sectionId === 'poetry') {
+        initializeQuotes();
       }
 
       document.querySelectorAll(
