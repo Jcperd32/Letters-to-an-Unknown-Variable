@@ -84,6 +84,17 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 1500);
     }, 1500);
   }
+  /*math section*/
+  document.addEventListener("click", function(e) {
+    if (e.target.closest(".theorem-btn")) {
+      e.target.closest(".theorem").classList.toggle("show-text");
+  
+      if (typeof MathJax !== 'undefined') {
+        MathJax.typesetPromise();
+      }
+    }
+  });
+  
   /*quote*/
   function initializeQuotes() {
   const quotes = [
