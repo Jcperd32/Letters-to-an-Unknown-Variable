@@ -462,7 +462,7 @@ header {
 /*for math*/
 
 .theorem {
-  background: white;
+  background: #696969;/*haha if anyone actually reads this*/
   border-radius: 0.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 1.5rem 1.5rem 0 1.5rem;
@@ -478,7 +478,7 @@ header {
 
 .theorem-title p {
   letter-spacing: 0.1rem;
-  color: yellowgreen;
+  color: #FFFAF0;
   font-weight: bolder;
 }
 .theorem-btn {
