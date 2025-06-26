@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const html = await response.text();
       contentContainer.innerHTML = html;
 
-      if (sectionId === 'dictionary') {
+      if (sectionId === 'books') {
         initializeDictionary();
       }
       
