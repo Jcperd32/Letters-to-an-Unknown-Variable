@@ -84,6 +84,53 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 1500);
     }, 1500);
   }
+  /*dictionary*/
+  function initializeDictionary() {
+    const inputEl = document.getElementById("word");
+    const infoTextEl = document.getElementById("info-text");
+    const meaningContainerEl = document.getElementById("definition-container");
+    const titleEl = document.getElementById("word-title");
+    const meaningEl = document.getElementById("definition");
+    const audioEl = document.getElementById("audio");
+
+    async function fetchAPI(word) {
+      try {
+        infoTextEl.style.display = "block";
+        meaningContainerEl.style.display = "none";
+        infoTextEl.innerText = `Searching the meaning of "${word}"`;
+        const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+        const result = await fetch(url).then((res) => res.json());
+
+        if (result.title) {
+          meaningContainerEl.style.display = "block";
+          infoTextEl.style.display = "none";
+          titleEl.innerText = word;
+          meaningEl.innerText = "N/A";
+          audioEl.style.display = "none";
+        } else {
+          infoTextEl.style.display = "none";
+          meaningContainerEl.style.display = "block";
+          audioEl.style.display = "inline-flex";
+          titleEl.innerText = result[0].word;
+          meaningEl.innerText = result[0].meanings[0].definitions[0].definition;
+          audioEl.src = result[0].phonetics[0].audio;
+        }
+      } catch (error) {
+        console.log(error);
+        infoTextEl.innerText = `an error happened, try again later`;
+      }
+    }
+
+    if (inputEl) {
+      inputEl.addEventListener("keyup", (e) => {
+        if (e.target.value && e.key === "Enter") {
+          fetchAPI(e.target.value);
+        }
+      });
+    }
+  }
+
+  
   /*math section*/
   document.addEventListener("click", function(e) {
     if (e.target.closest(".theorem-btn")) {
