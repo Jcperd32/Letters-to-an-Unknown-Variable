@@ -412,6 +412,39 @@ header {
 #books h3:hover::after {
   width: 100%;
 }
+
+/*dictionary*/
+
+.dictionary{
+  background-color: #444;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  margin: 10px;
+  max-width: 450px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+#books h1{
+  font-size: 28px;
+}
+
+.word{
+  height: 53px;
+  width: 300px;
+  background-color: #696969;
+  border-color: rgba(255,255,255, .4);
+  font-size: 16px;
+  padding: 0 42px;
+  border-radius: 5px;
+}
+
+.definition-container{
+  display: none;
+}
+
 /*Poetry*/
 
 .container {
