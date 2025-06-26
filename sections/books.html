@@ -78,13 +78,14 @@
     <img class="section-image" src="books/b9.jpg">
   </div>
   <br><br>
-  <div class="container">
-      <h2 class="pquote">
-        <i class="fa-solid fa-quote-left"></i>
-        <span id="pquote">Quote</span>
-        <i class="fa-solid fa-quote-right"></i>
-      </h2>
-      <p class="author" id="author">~ Author</p>
-      <button class="getbtn" id="getbtn">Get a quote</button>
+  <div class="dictionary">
+      <h1>English Dictionary</h1>
+      <input placeholder="Search a word" type="text" class="word" id="word" />
+      <p class="info-text" id="info-text">Type a word and press enter</p>
+      <div class="definition-container" id="definition-container">
+        <p>Word Title: <span class="word-title" id="word-title">___</span></p>
+        <p>Meaning: <span class="definition" id="definition">___</span></p>
+        <audio src="" controls id="word-audio"></audio>
+      </div>
   </div>
 </section>
