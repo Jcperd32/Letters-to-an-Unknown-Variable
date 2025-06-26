@@ -383,6 +383,10 @@ document.addEventListener('DOMContentLoaded', function() {
       
       const html = await response.text();
       contentContainer.innerHTML = html;
+
+      if (sectionId === 'dictionary') {
+        initializeDictionary();
+      }
       
       if (sectionId === 'books') {
         loadCSS('styles/books.css');
