@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const meaningContainerEl = document.getElementById("definition-container");
     const titleEl = document.getElementById("word-title");
     const meaningEl = document.getElementById("definition");
-    const audioEl = document.getElementById("audio");
+    const audioEl = document.getElementById("word-audio");
 
     async function fetchAPI(word) {
       try {
