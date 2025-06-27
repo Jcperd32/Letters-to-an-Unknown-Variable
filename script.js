@@ -178,13 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return strArray.join(" ");
     }
-    refresh();
 
-    document.addEventListener("click", function(e) {
-      if (e.target.id === "checkBtn") check();
-      if (e.target.id === "refreshBtn") refresh();
-    });
-  }
     
   function check() {
       let input = document.getElementById("inputWord");
@@ -208,6 +202,14 @@ document.addEventListener('DOMContentLoaded', function() {
       let hint = document.getElementById("hint");
       hint.innerHTML = "<b>Hint:</b> " + displayHint;
       document.getElementById("output").innerText = "Result:";
+  }
+
+  refresh();
+
+    document.addEventListener("click", function(e) {
+      if (e.target.id === "checkBtn") check();
+      if (e.target.id === "refreshBtn") refresh();
+    });
   }
     
     
