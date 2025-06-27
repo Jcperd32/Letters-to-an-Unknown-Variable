@@ -129,6 +129,82 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   }
+  /*game for scramble*/
+  function scrambleGame() {
+      const scramble = [
+        "within",
+        "the", 
+        "ineffable",
+        "lingering",
+        "machiavelian",
+        "maim",
+        "vices",
+        "crisis",
+        "tale",
+        "conundrum",
+        "theorem",
+        "quantum",
+        "pi",
+        "piece"
+    ]
+    
+    const hints = [
+        "000001",
+        "000010", 
+        "000011",
+        "000100",
+        "000101",
+        "000110",
+        "000111",
+        "001000",
+        "001001",
+        "001010",
+        "001011",
+        "001100",
+        "001101",
+        "001111"
+    ];
+    
+    let displayWord = "";
+    
+    function shuffle(str) {
+        strArray = Array.from(str);
+        for (let i = 0; i < strArray.length - 1; ++i) {
+            let j = Math.floor(Math.random() * strArray.length);
+        
+            let temp = strArray[i];
+            strArray[i] = strArray[j];
+            strArray[j] = temp;
+        }
+        return strArray.join(" ");
+    }
+    
+    function check() {
+        let input = document.getElementById("inputWord");
+        let output = document.getElementById("output");
+        if (
+            input.value.toLocaleLowerCase() ===
+            displayWord.toLocaleLowerCase()
+        )
+            output.innerHTML = "Result: Correct";
+        else output.innerHTML = "Result: Incorrect";
+    }
+    
+    function refresh() {
+        index = Math.floor(Math.random() * 15);
+        displayWord = scramble[index];
+        displayHint = hints[index];
+        scrambleWord = 
+            document.getElementById("scrambleWord");
+        scrambleWord.innerText =
+            shuffle(displayWord).toUpperCase();
+        let hint = document.getElementById("hint");
+        hint.innerHTML = "<b>Hint:</b> " + displayHint;
+        document.getElementById("output").innerText = "Result:";
+    }
+    
+    refresh();
+    }
 
   
   /*math section*/
@@ -390,6 +466,10 @@ document.addEventListener('DOMContentLoaded', function() {
       
       if (sectionId === 'books') {
         loadCSS('styles/books.css');
+      }
+
+      if (sectionId=== 'movies'){
+        scrambleGame();
       }
 
       if (sectionId === 'poetry') {
