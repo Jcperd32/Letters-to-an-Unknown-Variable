@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   /*game for scramble*/
-    
+  function scrambleGame() {
       const scramble = [
         "within",
         "the", 
@@ -178,37 +178,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return strArray.join(" ");
     }
-    
-    function check() {
-        let input = document.getElementById("inputWord");
-        let output = document.getElementById("output");
-        if (
-            input.value.toLocaleLowerCase() ===
-            displayWord.toLocaleLowerCase()
-        )
-            output.innerHTML = "Result: Correct";
-        else output.innerHTML = "Result: Incorrect";
-    }
-    
-    function refresh() {
-        index = Math.floor(Math.random() * 15);
-        displayWord = scramble[index];
-        displayHint = hints[index];
-        scrambleWord = 
-            document.getElementById("scrambleWord");
-        scrambleWord.innerText =
-            shuffle(displayWord).toUpperCase();
-        let hint = document.getElementById("hint");
-        hint.innerHTML = "<b>Hint:</b> " + displayHint;
-        document.getElementById("output").innerText = "Result:";
-    }
-    
     refresh();
 
     document.addEventListener("click", function(e) {
       if (e.target.id === "checkBtn") check();
       if (e.target.id === "refreshBtn") refresh();
     });
+  }
+    
+  function check() {
+      let input = document.getElementById("inputWord");
+      let output = document.getElementById("output");
+      if (
+          input.value.toLocaleLowerCase() ===
+          displayWord.toLocaleLowerCase()
+      )
+          output.innerHTML = "Result: Correct";
+      else output.innerHTML = "Result: Incorrect";
+  }
+  
+  function refresh() {
+      index = Math.floor(Math.random() * 15);
+      displayWord = scramble[index];
+      displayHint = hints[index];
+      scrambleWord = 
+          document.getElementById("scrambleWord");
+      scrambleWord.innerText =
+          shuffle(displayWord).toUpperCase();
+      let hint = document.getElementById("hint");
+      hint.innerHTML = "<b>Hint:</b> " + displayHint;
+      document.getElementById("output").innerText = "Result:";
+  }
+    
+    
     
 
   
@@ -472,10 +474,8 @@ document.addEventListener('DOMContentLoaded', function() {
       
 
       if (sectionId === 'movies') {
-        setTimeout(() => {
-          suffle(str); 
-          check();
-          refresh();
+        setTimeout(() => { 
+          scrambleGame();
         }, 50); 
       }
 
