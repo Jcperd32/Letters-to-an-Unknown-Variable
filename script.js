@@ -129,6 +129,44 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   }
+  /*calculator */
+  function calculator() {
+    const buttonsE1 = document.querySelectorAll("button");
+
+    const inputFieldE1 = document.getElementById("result");
+
+    for (let i = 0 ; i < buttonsE1.length; i++){
+      buttonsE1[i].addEventListener("click", () =>{
+        const buttonValue = buttonsE1[i].textContent;
+        if (buttonValue === "C"){
+          clearResult();
+        } else if (buttonValue === "=") {
+          calculateResult();
+        } else {
+          appendValue(buttonValue);
+        }
+      });
+    }
+
+    function clearResult() {
+      inputFieldE1.value = "";
+    }
+
+    function calculateResult() {
+    const inputValue = inputFieldE1.value;
+    
+    if (inputValue === "$04/07/1998$") {
+        inputFieldE1.value = "it wasn't that hard 🎉"; 
+    } else {
+        inputFieldE1.value = eval(inputValue); 
+    }
+}
+
+    function appendValue(buttonValue) {
+      inputFieldE1.value += buttonValue;
+    }
+  }
+
   /*game for scramble*/
   function scrambleGame() {
       const scramble = [
@@ -473,7 +511,10 @@ document.addEventListener('DOMContentLoaded', function() {
         loadCSS('styles/books.css');
         setTimeout(() => initializeDictionary(), 100); 
       }
-      
+
+      if (sectionId === 'math') {
+        calculator();
+      }
 
       if (sectionId === 'movies') {
         setTimeout(() => { 
