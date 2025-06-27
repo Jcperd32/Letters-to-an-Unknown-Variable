@@ -464,8 +464,8 @@ document.addEventListener('DOMContentLoaded', function() {
       contentContainer.innerHTML = html;
 
       if (sectionId === 'books') {
-        initializeDictionary();
         loadCSS('styles/books.css');
+        setTimeout(() => initializeDictionary(), 100); 
       }
       
 
