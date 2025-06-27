@@ -542,7 +542,54 @@ header {
 .show-text .plus-icon {
   display: none;
 }
-
+/*Movies for game*/
+.root {
+    font-size: x-large ;
+    color: grey;
+    background-color: grey;
+    box-shadow: 0 2px 5px grey;
+    padding: 0% 5% 1% 5%;
+    text-align: center;
+    border-radius: 5px 0;
+}
+.root h1{
+    border-bottom: 4px dashed;
+    border-color: black;
+}
+.root .inputWord {
+    font-size: 20px;
+    padding-left: 10px;
+    outline: 2px black;
+}
+.foot{
+    margin-bottom: 0%;
+    display: flex;
+    width: 100%;
+}
+.foot button{
+    width: 48%;
+    padding: 1%;
+    margin: 1%;
+    background-color: grey;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.747);
+    font-size: large;
+}
+#scrambleWord {
+    color: black;
+    font-size: 25px;
+}
+.root .gameTitle{
+    color: black;
+    font-size: 40px;
+}
+#hint{
+    color: black;
+    font-size: 15px;
+}
+#output{
+    color: black;
+}
 /*Gallery*/
 .gallery-box{
   margin-top: 50px;
