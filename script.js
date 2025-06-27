@@ -207,6 +207,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     refresh();
+
+    document.addEventListener("click", function(e) {
+      if (e.target.id === "checkBtn") check();
+      if (e.target.id === "refreshBtn") refresh();
+    });
     }
 
   
