@@ -546,7 +546,7 @@ header {
 .root {
     font-size: x-large ;
     color: grey;
-    background-color: grey;
+    background-color: #555555;
     box-shadow: 0 2px 5px grey;
     padding: 0% 5% 1% 5%;
     text-align: center;
