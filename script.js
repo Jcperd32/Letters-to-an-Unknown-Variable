@@ -130,9 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   /*game for scramble*/
-  function scrambleGame() {
-    
-
     
       const scramble = [
         "within",
@@ -212,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (e.target.id === "checkBtn") check();
       if (e.target.id === "refreshBtn") refresh();
     });
-    }
+    
 
   
   /*math section*/
@@ -476,7 +473,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (sectionId === 'movies') {
         setTimeout(() => {
-          scrambleGame(); 
+          suffle(str); 
+          check();
+          refresh();
         }, 50); 
       }
 
