@@ -590,6 +590,11 @@ header {
 #output{
     color: black;
 }
+.root button{
+  color: white;
+  font-size: 15px;
+}
+
 /*Gallery*/
 .gallery-box{
   margin-top: 50px;
