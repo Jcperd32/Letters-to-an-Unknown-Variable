@@ -131,6 +131,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   /*game for scramble*/
   function scrambleGame() {
+    
+
+    
       const scramble = [
         "within",
         "the", 
@@ -462,14 +465,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (sectionId === 'books') {
         initializeDictionary();
-      }
-      
-      if (sectionId === 'books') {
         loadCSS('styles/books.css');
       }
+      
 
-      if (sectionId=== 'movies'){
-        scrambleGame();
+      if (sectionId === 'movies') {
+        setTimeout(() => {
+          scrambleGame(); 
+        }, 50); 
       }
 
       if (sectionId === 'poetry') {
